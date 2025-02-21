@@ -116,6 +116,7 @@
 
 .header__theme-menu-button_active {
   pointer-events: none;
+  border-block-end: 1px solid currentColor;
 }
 
 .header__theme-menu-button:focus {
@@ -124,10 +125,6 @@
 
 .header__theme-menu-button:focus-visible {
   outline: none;
-  border-block-end: 1px solid currentColor;
-}
-
-.header__theme-menu-button_active {
   border-block-end: 1px solid currentColor;
 }
 
