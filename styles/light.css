@@ -6,7 +6,9 @@
   --accent-color: #FF8DCB;
   --highlighted-text-color: #353430;
   --text-color: #353430;
-  --button-color: #353430;
+  --section-title-color: var(--text-color);
+  --header-decoration-color: #353430;
+  --button-border-hover: 1px solid rgba(50, 49, 45, 0.4);
 }
 
 .theme-light .rec-indicator {
@@ -22,7 +24,8 @@
     --accent-color: #FF8DCB;
     --highlighted-text-color: #353430;
     --text-color: #353430;
-    --button-color: #353430;
+    --section-title-color: var(--text-color);
+    --header-decoration-color: #353430;
     --button-border-hover: 1px solid rgba(50, 49, 45, 0.4);
   }
 

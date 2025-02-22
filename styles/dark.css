@@ -1,12 +1,13 @@
 :root.theme-dark {
   --bg-image: url(../images/cover-image-dark.png);
   --bg-color: #000028;
-  
+
   --cover-text-color: #DB00FF;
   --accent-color: #FF0070;
   --highlighted-text-color: #000028;
   --text-color: #F1B2CE;
-  --button-color: #FF0070;
+  --section-title-color: #FF0070;
+  --header-decoration-color: #FF0070;
   --button-border-hover: 1px solid rgba(255, 0, 112, 0.4);
 }
 

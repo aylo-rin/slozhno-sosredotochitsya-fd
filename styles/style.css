@@ -5,7 +5,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: var(--bg-color);
-  font-family: var(--main-font, sans-serif);
+  font-family: var(--main-font, monospace);
   font-size: var(--font-size, 18px);
   line-height: var(--line-height, 1.463rem);
   color: var(--text-color);
@@ -51,9 +51,10 @@
 .rec-indicator {
   position: absolute;
   line-height: 1.389rem;
-  top: var(--padding);
+  text-transform: uppercase;
+  top: calc(var(--padding) + 2px);
   right: calc(var(--padding) + 9px);
-  color: var(--accent-color);
+  color: var(--header-decoration-color);
 }
 
 .rec-indicator::after {
@@ -61,11 +62,11 @@
   display: inline-block;
   width: 9px;
   height: 9px;
-  background-color: var(--accent-color);
+  background-color: var(--header-decoration-color);
   border-radius: 50%;
   box-shadow: 0 0 6px 2px;
   margin-left: 10px;
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 .decorated-zone::before,
@@ -79,15 +80,15 @@
 .decorated-zone::before {
   top: var(--padding);
   right: var(--padding);
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--header-decoration-color);
+  border-right: 1px solid var(--header-decoration-color);
 }
 
 .decorated-zone::after {
   bottom: var(--padding);
   left: var(--padding);
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--header-decoration-color);
+  border-left: 1px solid var(--header-decoration-color);
 }
 
 .header__theme-menu {
@@ -101,10 +102,10 @@
 }
 
 .header__theme-menu-button {
-  width: 70px;
-  height: 26px;
+  min-width: 70px;
+  min-height: 26px;
   line-height: 1rem;
-  color: var(--button-color);
+  color: var(--header-decoration-color);
   background-color: transparent;
   border: none;
   text-transform: lowercase;
@@ -117,7 +118,7 @@
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  border-block-end: 1px solid currentColor;
+  outline: 1px solid var(--header-decoration-color);
 }
 
 .header__theme-menu-button:focus {
@@ -126,7 +127,7 @@
 
 .header__theme-menu-button:focus-visible {
   outline: none;
-  border-block-end: 1px solid currentColor;
+  border-block-end: 1px solid var(--header-decoration-color);
 }
 
 .title {
@@ -141,6 +142,7 @@
 
 .header__description {
   font-size: var(--font-size, 18px);
+  font-weight: bold;
   justify-self: end;
   min-width: 355px;
   max-width: calc(50vw - var(--padding));
@@ -157,24 +159,29 @@
 
 .section__title {
   margin-block-end: var(--section-title-end);
-  color: var(--accent-color);
+  color: var(--section-title-color);
   font-size: var(--font-size, 18px);
   font-weight: bold;
+}
+
+.section-advice .section__title {
+  margin-block-end: calc(var(--section-title-end) - 1px);
 }
 
 .card__title {
   margin-block-end: var(--card-title-end);
   font-weight: bold;
+  font-size: var(--font-size);
+}
+
+.card__text + .card__text {
+  margin-top: 20px;
 }
 
 .card__list {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-}
-
-.section-advice {
-  margin-block-start: -2px;
 }
 
 .gallery {
@@ -191,7 +198,11 @@
 }
 
 .gallery__image {
-  width: 100%;
+  inline-size: 100%;
+  block-size: 100%;
+  max-block-size: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .sunset {
@@ -234,13 +245,6 @@
 }
 
 @media (width >= 768px) {
-  :root {
-    --padding: 20px;
-    --header-footer-margin: 60px;
-
-    --section-end: 80px;
-  }
-
   .header {
     padding-inline-start: 0px;
   }
@@ -273,14 +277,6 @@
     "sunset sunset ice-cream"
     "tape books ice-cream"
     "tape street street";
-  }
-
-  .gallery__image {
-    inline-size: 100%;
-    block-size: 100%;
-    max-block-size: 100%;
-    object-fit: cover;
-    object-position: center;
   }
 }
 
